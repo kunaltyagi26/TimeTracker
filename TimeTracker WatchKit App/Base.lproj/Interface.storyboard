@@ -1,15 +1,124 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17506" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17500"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TimeTracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="center" verticalAlignment="center" animationDuration="1" layout="vertical" id="DWF-wT-iko">
+                            <items>
+                                <label alignment="center" text="3h 44m" textAlignment="center" id="pdX-Ph-t6Q">
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                </label>
+                                <label width="1" alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" minimumScaleFactor="0.5" id="UDX-yA-ilR">
+                                    <string key="text">Today
+3h 44m</string>
+                                    <fontDescription key="font" type="boldSystem" pointSize="40"/>
+                                </label>
+                                <button width="0.90000000000000002" alignment="center" verticalAlignment="bottom" title="Clock-In" id="lIh-ds-Y3q">
+                                    <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="15"/>
+                                    <connections>
+                                        <action selector="clockInOutTapped" destination="AgC-eL-Hgc" id="O9N-it-OxU"/>
+                                    </connections>
+                                </button>
+                                <separator alignment="left" verticalAlignment="bottom" id="VhT-PU-AeC">
+                                    <color key="color" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </separator>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" spacing="24" id="jZv-ev-EHE">
+                            <items>
+                                <button width="25" height="25" alignment="center" backgroundImage="info.circle.fill" catalog="system" id="CiA-Y0-Yok">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <action selector="historyTapped" destination="AgC-eL-Hgc" id="xc8-vq-KD4"/>
+                                    </connections>
+                                </button>
+                                <button width="25" height="25" alignment="center" backgroundImage="trash.circle.fill" catalog="system" id="V3g-Ij-WrA">
+                                    <color key="backgroundColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <connections>
+                                        <action selector="resetAllTapped" destination="AgC-eL-Hgc" id="7K6-fh-s6P"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="button" destination="lIh-ds-Y3q" id="6vh-yh-Ek4"/>
+                        <outlet property="middleLabel" destination="UDX-yA-ilR" id="Tk2-wL-YYA"/>
+                        <outlet property="topLabel" destination="pdX-Ph-t6Q" id="mTJ-ec-B4f"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="19" y="-6"/>
+        </scene>
+        <!--timeTableController-->
+        <scene sceneID="g4x-ZF-z3i">
+            <objects>
+                <controller identifier="timeTableController" id="Z9O-O5-w38" customClass="TimeTableInterfaceController" customModule="TimeTracker_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="x6E-BC-76v">
+                            <items>
+                                <tableRow identifier="ClockInOutRow" id="jF0-HL-Oeo" customClass="ClockInOutRowController" customModule="TimeTracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="qZB-EM-97W">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" verticalAlignment="center" text="Label" id="hzd-zZ-cAh">
+                                                <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="hzd-zZ-cAh" id="o9l-iJ-T4b"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="x6E-BC-76v" id="jE5-8e-OsK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="285" y="-5"/>
+        </scene>
+        <!--timeDetail-->
+        <scene sceneID="shR-Px-3Sk">
+            <objects>
+                <controller identifier="timeDetail" id="UJd-UT-fjw" customClass="DetailInterfaceController" customModule="TimeTracker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Clock-In" id="yhh-pU-MVS">
+                            <color key="textColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <label alignment="left" text="May 5th 12:08am" numberOfLines="2" id="ZGl-ZN-gPe">
+                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                        </label>
+                        <label alignment="left" verticalAlignment="bottom" text="Clock-Out" id="Xz4-tq-xJw">
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <label alignment="left" verticalAlignment="bottom" text="May 5th 12:20am" numberOfLines="2" id="w1r-0V-YuL">
+                            <fontDescription key="font" type="system" weight="medium" pointSize="16"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="clockInLabel" destination="ZGl-ZN-gPe" id="6X8-4W-qiE"/>
+                        <outlet property="clockOutLabel" destination="w1r-0V-YuL" id="JKo-Ab-Dax"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="540" y="-7"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="trash.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

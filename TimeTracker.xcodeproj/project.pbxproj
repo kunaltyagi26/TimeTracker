@@ -21,6 +21,10 @@
 		2B2ACFCB26C1A72A00F784E2 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFCA26C1A72A00F784E2 /* ExtensionDelegate.swift */; };
 		2B2ACFCD26C1A72A00F784E2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFCC26C1A72A00F784E2 /* ComplicationController.swift */; };
 		2B2ACFCF26C1A73200F784E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2ACFCE26C1A73200F784E2 /* Assets.xcassets */; };
+		2B2ACFE226C8FCA300F784E2 /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFE126C8FCA300F784E2 /* DateComponents+Extension.swift */; };
+		2B2ACFE726C8FEA800F784E2 /* TimeTableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFE626C8FEA800F784E2 /* TimeTableInterfaceController.swift */; };
+		2B2ACFEF26C900CE00F784E2 /* ClockInOutRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFEE26C900CE00F784E2 /* ClockInOutRowController.swift */; };
+		2B2ACFF426C906BF00F784E2 /* DetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2ACFF326C906BF00F784E2 /* DetailInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,10 @@
 		2B2ACFCC26C1A72A00F784E2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		2B2ACFCE26C1A73200F784E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B2ACFD026C1A73200F784E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B2ACFE126C8FCA300F784E2 /* DateComponents+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Extension.swift"; sourceTree = "<group>"; };
+		2B2ACFE626C8FEA800F784E2 /* TimeTableInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableInterfaceController.swift; sourceTree = "<group>"; };
+		2B2ACFEE26C900CE00F784E2 /* ClockInOutRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockInOutRowController.swift; sourceTree = "<group>"; };
+		2B2ACFF326C906BF00F784E2 /* DetailInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				2B2ACFC826C1A72A00F784E2 /* InterfaceController.swift */,
+				2B2ACFE626C8FEA800F784E2 /* TimeTableInterfaceController.swift */,
+				2B2ACFF326C906BF00F784E2 /* DetailInterfaceController.swift */,
 				2B2ACFCA26C1A72A00F784E2 /* ExtensionDelegate.swift */,
 				2B2ACFCC26C1A72A00F784E2 /* ComplicationController.swift */,
 				2B2ACFCE26C1A73200F784E2 /* Assets.xcassets */,
 				2B2ACFD026C1A73200F784E2 /* Info.plist */,
+				2B2ACFE126C8FCA300F784E2 /* DateComponents+Extension.swift */,
+				2B2ACFEE26C900CE00F784E2 /* ClockInOutRowController.swift */,
 			);
 			path = "TimeTracker WatchKit Extension";
 			sourceTree = "<group>";
@@ -301,9 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2ACFE726C8FEA800F784E2 /* TimeTableInterfaceController.swift in Sources */,
+				2B2ACFEF26C900CE00F784E2 /* ClockInOutRowController.swift in Sources */,
 				2B2ACFCB26C1A72A00F784E2 /* ExtensionDelegate.swift in Sources */,
+				2B2ACFE226C8FCA300F784E2 /* DateComponents+Extension.swift in Sources */,
 				2B2ACFC926C1A72A00F784E2 /* InterfaceController.swift in Sources */,
 				2B2ACFCD26C1A72A00F784E2 /* ComplicationController.swift in Sources */,
+				2B2ACFF426C906BF00F784E2 /* DetailInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
